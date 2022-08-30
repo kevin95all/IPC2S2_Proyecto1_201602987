@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from colorama import Fore
 from XML import XML
 
 
@@ -68,8 +69,8 @@ class Main:
         ventana.mainloop()
 
     def salir(self):
-        print('                       ')
-        print('--> Programa finalizado')
+        print('                                ')
+        print(Fore.RED+'--> Programa finalizado')
         self.ruta = ''
         self.op = ''
         self.paciente_seleccionado = False
