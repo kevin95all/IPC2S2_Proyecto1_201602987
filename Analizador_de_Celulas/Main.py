@@ -13,14 +13,14 @@ class Main:
         self.paciente_seleccionado = False
         self.archivo = XML()
 
-    def menu_principal(self):
+    def menu_principal(self):  # -----> Metodo para mostrar el menu principal
         while not self.salida:
             print('                                                     ')
             print(Fore.GREEN+'┌------------ MENU PRINCIPAL ------------┐')
             print(Fore.GREEN+'|                                        |')
             print(Fore.GREEN+'|        1)   Cargar archivo             |')
             print(Fore.GREEN+'|        2)   Seleccionar paciente       |')
-            print(Fore.GREEN+'|        3)   Seleccionar celula         |')
+            print(Fore.GREEN+'|        3)   Mostrar celula             |')
             print(Fore.GREEN+'|        4)   Analizar paciente          |')
             print(Fore.GREEN+'|        5)   Generar reporte            |')
             print(Fore.GREEN+'|        6)   Salir                      |')
@@ -35,7 +35,7 @@ class Main:
             elif self.op == '2':
                 self.seleccionar_paciente()
             elif self.op == '3':
-                self.seleccionar_celula()
+                self.mostrar_celula()
             elif self.op == '4':
                 self.analizar_paciente()
             elif self.op == '5':
@@ -46,7 +46,7 @@ class Main:
                 print('                             ')
                 print(Fore.RED+'--> Opción no valida')
 
-    def cargar_archivo(self):
+    def cargar_archivo(self):  # -----> Metodo para cargar archivos XML
         ventana = Tk()
         respaldo = self.ruta
         self.ruta = ''
@@ -68,19 +68,49 @@ class Main:
             print(Fore.CYAN+'--> Archivo cargado con exito')
         ventana.mainloop()
 
-    def seleccionar_paciente(self):
-        pass
+    def seleccionar_paciente(self):  # -----> Metodo para elegir a un paciente
+        if self.ruta == '':
+            print('                                            ')
+            print(Fore.RED+'--> No se ha cargado ningun archivo')
+        else:
+            print('                      ')
+            self.archivo.mostrar_pacientes()
+            self.paciente_seleccionado = True
 
-    def seleccionar_celula(self):
-        pass
+    def mostrar_celula(self):  # -----> Metodo para mostrar la celula inicial
+        if self.ruta == '':
+            print('                                            ')
+            print(Fore.RED+'--> No se ha cargado ningun archivo')
+        else:
+            if not self.paciente_seleccionado:
+                print('                                              ')
+                print(Fore.RED+'--> No se ha seleccionado un paciente')
+            else:
+                pass
 
-    def analizar_paciente(self):
-        pass
+    def analizar_paciente(self):  # -----> Metodo para iniciar el analisis
+        if self.ruta == '':
+            print('                                            ')
+            print(Fore.RED+'--> No se ha cargado ningun archivo')
+        else:
+            if not self.paciente_seleccionado:
+                print('                                              ')
+                print(Fore.RED+'--> No se ha seleccionado un paciente')
+            else:
+                pass
 
-    def generar_reporte(self):
-        pass
+    def generar_reporte(self):  # -----> Metodo para generar los reportes
+        if self.ruta == '':
+            print('                                            ')
+            print(Fore.RED+'--> No se ha cargado ningun archivo')
+        else:
+            if not self.paciente_seleccionado:
+                print('                                              ')
+                print(Fore.RED+'--> No se ha seleccionado un paciente')
+            else:
+                pass
 
-    def salir(self):
+    def salir(self):  # -----> Metodo para finalizar el programa
         print('                                ')
         print(Fore.RED+'--> Programa finalizado')
         self.ruta = ''

@@ -5,3 +5,9 @@ class XML:
 
     def leer_xml(self, ruta):
         pass
+
+    def mostrar_pacientes(self):
+        pass
+
+    def resultados(self):
+        pass
