@@ -1,10 +1,10 @@
-class NodeP:
+class Node:
 
     def __init__(self):
         pass
 
 
-class NodeC:
+class NodeP:
 
     def __init__(self):
         pass

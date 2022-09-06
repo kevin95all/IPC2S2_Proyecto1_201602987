@@ -15,36 +15,36 @@ class Main:
 
     def menu_principal(self):
         while not self.salida:
-            print('                                          ')
-            print('┌------------ MENU PRINCIPAL ------------┐')
-            print('|                                        |')
-            print('|        1)   Cargar archivo             |')
-            print('|        2)   Seleccionar paciente       |')
-            print('|        3)   Seleccionar celula         |')
-            print('|        4)   Analizar paciente          |')
-            print('|        5)   Generar reporte            |')
-            print('|        6)   Salir                      |')
-            print('|                                        |')
-            print('└----------------------------------------┘')
-            print('                                          ')
+            print('                                                     ')
+            print(Fore.GREEN+'┌------------ MENU PRINCIPAL ------------┐')
+            print(Fore.GREEN+'|                                        |')
+            print(Fore.GREEN+'|        1)   Cargar archivo             |')
+            print(Fore.GREEN+'|        2)   Seleccionar paciente       |')
+            print(Fore.GREEN+'|        3)   Seleccionar celula         |')
+            print(Fore.GREEN+'|        4)   Analizar paciente          |')
+            print(Fore.GREEN+'|        5)   Generar reporte            |')
+            print(Fore.GREEN+'|        6)   Salir                      |')
+            print(Fore.GREEN+'|                                        |')
+            print(Fore.GREEN+'└----------------------------------------┘')
+            print('                                                     ')
 
-            self.op = input('--> Ingrese una opción: ')
+            self.op = input(Fore.CYAN+'--> Ingrese una opción: ')
 
             if self.op == '1':
                 self.cargar_archivo()
             elif self.op == '2':
-                pass
+                self.seleccionar_paciente()
             elif self.op == '3':
-                pass
+                self.seleccionar_celula()
             elif self.op == '4':
-                pass
+                self.analizar_paciente()
             elif self.op == '5':
-                pass
+                self.generar_reporte()
             elif self.op == '6':
                 self.salir()
             else:
-                print('                    ')
-                print('--> Opción no valida')
+                print('                             ')
+                print(Fore.RED+'--> Opción no valida')
 
     def cargar_archivo(self):
         ventana = Tk()
@@ -60,13 +60,25 @@ class Main:
         )
         if self.ruta == '':
             self.ruta = respaldo
-            print('                              ')
-            print('--> No se cargo ningun archivo')
+            print('                                       ')
+            print(Fore.RED+'--> No se cargo ningun archivo')
         else:
             self.archivo.leer_xml(self.ruta)
-            print('                             ')
-            print('--> Archivo cargado con exito')
+            print('                                       ')
+            print(Fore.CYAN+'--> Archivo cargado con exito')
         ventana.mainloop()
+
+    def seleccionar_paciente(self):
+        pass
+
+    def seleccionar_celula(self):
+        pass
+
+    def analizar_paciente(self):
+        pass
+
+    def generar_reporte(self):
+        pass
 
     def salir(self):
         print('                                ')
