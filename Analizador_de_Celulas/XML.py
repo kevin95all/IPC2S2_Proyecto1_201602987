@@ -43,7 +43,7 @@ class XML:
 
             self.paciente.append(self.lista_celdas)
             self.lista_celdas = []
-            self.pacientes.agregar_fin(n)
+            self.pacientes.agregar_fin(str(n))
             self.pacientes.agregar_fin(self.paciente)
             self.paciente = []
             n = n + 1
@@ -55,10 +55,10 @@ class XML:
         self.nombres.mostrar_contenido()
         print('                                                 ')
         posicion = input(Fore.CYAN+'--> Seleccione un paciente: ')
-        resultado = self.pacientes.buscar(int(posicion))
+        resultado = self.pacientes.buscar(posicion)
         if resultado is not None:
             print('       ')
             print(resultado)
-        self.operaciones.graficar(resultado)
-        self.operaciones.analizar(resultado)
-        self.operaciones.reportar(resultado)
+            self.operaciones.graficar(resultado)
+            self.operaciones.analizar(resultado)
+            self.operaciones.reportar(resultado)
