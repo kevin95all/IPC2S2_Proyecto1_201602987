@@ -1,4 +1,4 @@
-from Node import *
+from Node import Node
 from colorama import Fore
 
 
@@ -56,10 +56,10 @@ class SCList:  # -----> Lista circular simplemente enlazada
             nodo_auxiliar.siguiente = self.ini
             self.fin = nodo_auxiliar
 
-    def buscar(self, posicion):
+    def buscar(self, dato):
         nodo_auxiliar = self.ini
         while nodo_auxiliar:
-            if nodo_auxiliar.dato == posicion:
+            if nodo_auxiliar.dato == dato:
                 nodo_auxiliar = nodo_auxiliar.siguiente
                 return nodo_auxiliar.dato
             elif nodo_auxiliar.siguiente == self.ini:

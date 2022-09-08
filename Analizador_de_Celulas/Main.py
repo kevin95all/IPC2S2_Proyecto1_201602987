@@ -73,7 +73,6 @@ class Main:
             print('                                            ')
             print(Fore.RED+'--> No se ha cargado ningun archivo')
         else:
-            print('                      ')
             self.archivo.mostrar_pacientes()
             self.paciente_seleccionado = True
 
@@ -86,7 +85,8 @@ class Main:
                 print('                                              ')
                 print(Fore.RED+'--> No se ha seleccionado un paciente')
             else:
-                pass
+                print('                                        ')
+                print(Fore.CYAN+'--> Celula principal graficada')
 
     def analizar_paciente(self):  # -----> Metodo para iniciar el analisis
         if self.ruta == '':
@@ -97,7 +97,8 @@ class Main:
                 print('                                              ')
                 print(Fore.RED+'--> No se ha seleccionado un paciente')
             else:
-                pass
+                print('                                ')
+                print(Fore.CYAN+'--> Paciente analizado')
 
     def generar_reporte(self):  # -----> Metodo para generar los reportes
         if self.ruta == '':
@@ -108,7 +109,8 @@ class Main:
                 print('                                              ')
                 print(Fore.RED+'--> No se ha seleccionado un paciente')
             else:
-                pass
+                print('                                        ')
+                print(Fore.CYAN+'--> Reporte generado con exito')
 
     def salir(self):  # -----> Metodo para finalizar el programa
         print('                                ')
